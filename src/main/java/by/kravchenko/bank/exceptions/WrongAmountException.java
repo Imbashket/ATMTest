@@ -1,4 +1,4 @@
-package by.kravchenko.bank.atm.exceptions;
+package by.kravchenko.bank.exceptions;
 
 public class WrongAmountException extends Exception {
     public String toString() {

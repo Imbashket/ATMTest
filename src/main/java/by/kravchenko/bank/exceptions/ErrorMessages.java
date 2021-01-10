@@ -1,4 +1,4 @@
-package by.kravchenko.bank.atm.exceptions;
+package by.kravchenko.bank.exceptions;
 
 public enum ErrorMessages {
     INVALIDCARD("Invalid Card"),
