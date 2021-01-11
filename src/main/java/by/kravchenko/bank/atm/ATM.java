@@ -12,24 +12,16 @@ import java.util.*;
 
 public class ATM {
     private int ID = 0;
-    private final Map<Banknotes, Integer> moneyBank = new TreeMap<Banknotes, Integer>(
-            new Comparator<Banknotes>() {
-                public int compare(Banknotes o1, Banknotes o2) {
-                    if (o1.getDenomination() > o2.getDenomination())
-                        return 1;
-                    else if (o1.getDenomination() < o2.getDenomination())
-                        return -1;
-                    else return 0;
-                }
-            }
+    private final Map<Banknotes, Integer> moneyBank = new TreeMap<>(
+            Comparator.comparingInt(Banknotes::getDenomination)
     );
     private final Bank bank;
 
-    ATM(Bank bank) {
+    public ATM(Bank bank) {
         this.bank = bank;
     }
 
-    ATM(Bank bank, int ID) {
+    public ATM(Bank bank, int ID) {
         this(bank);
         this.ID = ID;
     }

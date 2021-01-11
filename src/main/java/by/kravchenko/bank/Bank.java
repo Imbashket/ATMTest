@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Bank {
-    private final Map<Integer, CardInfo> cards = new HashMap<Integer, CardInfo>();
+    private final Map<Integer, CardInfo> cards = new HashMap<>();
 
     public DebitCard addNewDebitCard(int PIN) {
         int ID = getFreeID();
@@ -55,6 +55,10 @@ public class Bank {
 
     public void chargeOff(Card card, int value) {
         cards.get(card.getID()).chargeOff(value);
+    }
+
+    public int getBalance(Card card) {
+        return cards.get(card.getID()).getBalance();
     }
 
     private static class CardInfo {

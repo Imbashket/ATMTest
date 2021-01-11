@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Cash {
-    private final Map<Banknotes, Integer> cash = new HashMap<Banknotes, Integer>();
+    private final Map<Banknotes, Integer> cash = new HashMap<>();
 
     public void addBanknotes(Banknotes banknotes, int number) {
         if (cash.containsKey(banknotes)) {
@@ -21,10 +21,13 @@ public class Cash {
     }
 
     public String toString() {
-        String msg = null;
+        StringBuilder msg = new StringBuilder("Your banknotes is: ");
         for (Map.Entry<Banknotes, Integer> entry : cash.entrySet()) {
-            msg = entry.getValue() + " - " + entry.getKey() + " ";
+            msg.append(entry.getValue())
+                    .append(" - ")
+                    .append(entry.getKey())
+                    .append(" ");
         }
-        return msg;
+        return msg.toString();
     }
 }
