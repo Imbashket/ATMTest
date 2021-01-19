@@ -61,7 +61,7 @@ public class MainClass {
             return "Incorrect enter of amount";
         }
         try {
-            return atm.getMoney(card, PIN, amount).toString();
+            return "Take " + atm.getMoney(card, PIN, amount).convertCashToString();
         } catch (Exception e) {
             return e.toString();
         }

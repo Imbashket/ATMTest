@@ -20,8 +20,8 @@ public class Cash {
         return cash;
     }
 
-    public String toString() {
-        StringBuilder msg = new StringBuilder("Your banknotes is: ");
+    public String convertCashToString() {
+        StringBuilder msg = new StringBuilder("Banknotes: ");
         for (Map.Entry<Banknotes, Integer> entry : cash.entrySet()) {
             msg.append(entry.getValue())
                     .append(" - ")
